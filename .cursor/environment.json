@@ -1,0 +1,6 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "install": "pip install -r requirements.txt"
+}
