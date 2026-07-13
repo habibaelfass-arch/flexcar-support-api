@@ -26,6 +26,11 @@ app.use(
 
 app.use(express.json());
 
+app.use((req: Request, _res: Response, next: NextFunction) => {
+  console.log(`[req] ${req.method} ${req.path} origin=${req.headers.origin ?? 'none'}`);
+  next();
+});
+
 app.use('/api/categories', categoriesRouter);
 app.use('/api/articles', articlesRouter);
 
