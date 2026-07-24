@@ -102,3 +102,4 @@ ALLOWED_ORIGIN=https://preview--flex-lovable-landing-pages.lovable.app,https://1
 | ~75 min | Committed and pushed. Railway deployed successfully. Health check and all endpoints confirmed live at production URL. |
 | ~90 min | Lovable frontend wired to Railway API. Categories loaded immediately. Articles showed 0 — Railway logs revealed Lovable's editor preview runs from `lovableproject.com`, not `lovable.app`. Added second origin to `ALLOWED_ORIGIN`. |
 | End of session | Both origins allowed. Lovable frontend confirmed loading real Kustomer articles. Per-request logging added to ease future debugging. Service is fully operational. |
+| Later | Original `KUSTOMER_API_KEY` was set to expire. Rotated to a new non-expiring key (same `org.permission.kb.read` role) and updated it in Railway. Verified via deploy logs (`[cache] Refreshed — 67 articles, 19 categories`) and live `/health` + `/api/categories` checks — no downtime, no code changes needed. |
